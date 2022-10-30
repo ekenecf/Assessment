@@ -2,9 +2,11 @@ import { combineReducers, legacy_createStore as createStore, applyMiddleware } f
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import AccountsDataReducer from './AccountsReducer';
+import CountriesDataReducer from './CountryReducer';
 
 const rootReducer = combineReducers({
   AccountsDataReducer,
+  CountriesDataReducer,
 });
 
 const store = createStore(

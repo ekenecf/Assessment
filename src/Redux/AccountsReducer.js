@@ -4,6 +4,7 @@ const initialState = {
   accounts: [],
   loading: false,
   error: false,
+  createError: false,
 };
 
 const AccountsDataReducer = (state = initialState, { type, payload }) => {
@@ -14,11 +15,15 @@ const AccountsDataReducer = (state = initialState, { type, payload }) => {
       };
     case ActionTypes.GET_ACCOUNT_LIST:
       return {
-        ...state, accounts: payload, loading: false, error: false,
+        ...state, accounts: payload.data, loading: false, error: false,
       };
     case ActionTypes.FETCH_DATA_ERROR:
       return {
         ...state, error: true,
+      };
+    case ActionTypes.FETCH_CREATE_ERROR:
+      return {
+        ...state, createError: true,
       };
     default:
       return state;

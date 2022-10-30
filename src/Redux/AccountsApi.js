@@ -1,23 +1,21 @@
 import axios from 'axios';
 import {
-  setCreateAccount, setGetAccount, setAccountError, setAccountLoading,
+  setCreateAccount, setGetAccount, setAccountError, setAccountLoading, setCreateAccountError,
 } from './ActionCreators';
 
 const ACCOUNTSURL = 'https://raw.githubusercontent.com/OtegaOvie/StaticDataset/main/accounts.json';
 
-export const postAccounts = () => (dispatch) => {
-  dispatch(setAccountLoading());
+export const postAccounts = (formInputs) => (dispatch) => {
   fetch(`${ACCOUNTSURL}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    // body: JSON.stringify((group)),
+    body: JSON.stringify((formInputs)),
   }).then((res) => {
     console.log(res);
-    // dispatch(addGroup(res));
   }).catch((error) => {
-    dispatch(setAccountError());
+    dispatch(setCreateAccountError());
     console.log(error);
   });
 };
@@ -26,12 +24,9 @@ export const getAccount = () => (dispatch) => {
   dispatch(setAccountLoading());
   axios.get(`${ACCOUNTSURL}`)
     .then((res) => {
-        dispatch(setGetAccount(res));
-      console.log(res);
-      // dispatch(addGroup(res));
+      dispatch(setGetAccount(res));
     })
-    .catch((error) => {
+    .catch(() => {
       dispatch(setAccountError());
-      console.log(error);
     });
 };
