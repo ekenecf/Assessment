@@ -7,7 +7,7 @@ const initialState = {
   createError: false,
 };
 
-const AccountsDataReducer = (state = initialState, { type, payload }) => {
+const AccountsDataReducer = (state = initialState, { type, payload } = {}) => {
   switch (type) {
     case ActionTypes.FETCH_DATA_LOADING:
       return {
