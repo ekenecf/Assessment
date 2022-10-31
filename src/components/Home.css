@@ -1,0 +1,175 @@
+.HomePage {
+  display: flex;
+  width: 100%;
+  background: #1E1E1E;
+}
+
+.w-3\/4 {
+  width: 70%;
+  background: #987899;
+  margin: 5% 0% 5% 5%;
+  height: 100vh;
+}
+
+.w-1\/4 {
+  width: 30%;
+  background: #fff;
+  margin: 5% 5% 5% 0%;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.FormCard {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.w-1\/4 h2 {
+  font-size: 25px;
+  color: #000;
+  margin-top: 10%;
+}
+
+.TableContainer {
+  padding: 10% 5% 0% 9%;
+}
+
+h1 {
+  margin-bottom: 5%;
+  font-size: 24px;
+  color: #fff;
+}
+
+table.tableHead {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 1px;
+  border-color: #E8E8E8;
+  border-style: solid;
+  border:1px solid #b3adad;
+  color: #000000;
+  }
+  
+table.tableHead td, table.tableHead th {
+  border-width: 2px;
+  border-color: #E8E8E8;
+  border-style: solid;
+  border:1px solid #b3adad;
+  padding: 10px;
+}
+  
+table.tableHead thead {
+  background-color: #E8E8E8;
+}
+
+.radio {
+  display: flex;
+}
+
+form {
+  height: 100vh;
+}
+
+form .Input {
+  margin: 4% 0px;
+  padding-left: 5%;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  height: 10%;
+  font-family: Lato;
+  box-shadow: 0px 9px 7px -3px rgba(0, 0, 0, 0.293);
+  background-color: #F3F3F3;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+}
+
+.radio input {
+  margin: 10px 10px;
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+input[type='radio'] {
+  -webkit-appearance:none;
+  width:20px;
+  height:20px;
+  border:1px solid darkgray;
+  border-radius:50%;
+  outline:none;
+  box-shadow:0 0 5px 5px rgba(194, 189, 189, 0.937) inset;
+}
+
+input[type='radio']:hover {
+  box-shadow: 0 0 5px 5px rgb(99, 109, 73) inset;
+}
+
+input[type='radio']:before {
+  content:'';
+  display:block;
+  width:60%;
+  height:60%;
+  margin: 20% auto;    
+  border-radius:50%;    
+}
+input[type='radio']:checked:before {
+  background:green;
+}
+
+form button {
+  border: 1px solid rgb(110, 109, 109);
+  margin-top: 4%;
+  width: 70%;
+  height: 6vh;
+  border-radius: 17px;
+}
+
+form button:hover {
+  background: blueviolet;
+  color: #fff;
+  border: none;
+  box-shadow: 0px 9px 7px -3px rgba(0, 0, 0, 0.293);
+}
+
+@media screen and (max-width: 768px) {
+  .HomePage {
+    flex-direction: column;
+  }
+
+  .TableContainer {
+    padding: 0%;
+    width: 100%;
+  }
+
+  .w-1\/4 {
+    width: 92%;
+    margin: 5% 5% 5% 4%;
+  }
+
+  .w-3\/4 {
+    width: 90%;
+    height: max-content;
+    margin: 5% 0% 0% 5%;
+    overflow-x: scroll;
+  }
+
+  h1 {
+    /* margin-bottom: 5%; */
+    font-size: 26px;
+    /* color: #fff; */
+    padding-inline: 4%;
+    padding-top: 4%;
+  }
+
+  form {
+    height: 65vh;
+  }
+}
