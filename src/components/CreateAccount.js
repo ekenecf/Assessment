@@ -81,12 +81,12 @@ function CreateAccount() {
           <input type="text" name="firstName" placeholder="First Name" required className="Input" onChange={(e) => updateFirstName(e)} />
           <input type="test" name="lastName" placeholder="Last Name" onChange={(e) => updateLastName(e)} required className="Input" />
           <div className="radio">
-            <input type="radio" name="gender" value="M" onChange={(e) => updateGender(e)} />
-            <label htmlFor="distance">
+            <label htmlFor="male">
+              <input type="radio" id="male" name="gender" value="M" onChange={(e) => updateGender(e)} />
               Male:
             </label>
-            <input type="radio" name="gender" value="F" onChange={(e) => updateGender(e)} />
-            <label htmlFor="distance">
+            <label htmlFor="female">
+              <input type="radio" id="female" name="gender" value="F" onChange={(e) => updateGender(e)} />
               Female:
             </label>
           </div>
