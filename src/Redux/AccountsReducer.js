@@ -21,10 +21,10 @@ const AccountsDataReducer = (state = initialState, { type, payload }) => {
       return {
         ...state, error: true,
       };
-    case ActionTypes.FETCH_CREATE_ERROR:
-      return {
-        ...state, createError: true,
-      };
+    // case ActionTypes.FETCH_CREATE_ERROR:
+    //   return {
+    //     ...state, createError: true,
+    //   };
     default:
       return state;
   }

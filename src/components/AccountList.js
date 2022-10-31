@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ClipLoader from 'react-spinners/ClipLoader';
-
-import { getAccount } from '../Redux/AccountsApi';
-
+import getAccount from '../Redux/AccountsApi';
 import './Home.css';
 
 function AccountList() {
   const dispatch = useDispatch();
-  const { accounts, loading, error } = useSelector((state) => state.AccountsDataReducer);
-  console.log(accounts);
+  const { loading, error } = useSelector((state) => state.AccountsDataReducer);
+  const getFromLocal = JSON.parse(localStorage.getItem('accountData')) || [];
+  console.log('Fetched data from local', getFromLocal);
 
   let pageDetail;
   if (loading) {
-    pageDetail = <ClipLoader color="#000" size={150} />;
+    if (getFromLocal === []) {
+      pageDetail = <ClipLoader color="#000" size={150} />;
+    }
   }
 
   if (error) {
@@ -40,7 +41,7 @@ function AccountList() {
           </thead>
           <tbody>
             {
-                accounts.map((datum) => (
+                getFromLocal.length ? getFromLocal.map((datum) => (
                   <tr key={datum.mobileNumber}>
                     <td>
                       {datum.firstName}
@@ -52,7 +53,7 @@ function AccountList() {
                     <td>{datum.mobileNumber}</td>
                     <td>{datum.nationality}</td>
                   </tr>
-                ))
+                )) : <div>Nothing Added Yet</div>
               }
           </tbody>
         </table>
