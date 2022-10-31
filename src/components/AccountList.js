@@ -8,7 +8,6 @@ function AccountList() {
   const dispatch = useDispatch();
   const { loading, error } = useSelector((state) => state.AccountsDataReducer);
   const getFromLocal = JSON.parse(localStorage.getItem('accountData')) || [];
-  console.log('Fetched data from local', getFromLocal);
 
   let pageDetail;
   if (loading) {
