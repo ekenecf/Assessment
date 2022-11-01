@@ -4,7 +4,6 @@ const initialState = {
   accounts: [],
   loading: false,
   error: false,
-  createError: false,
 };
 
 const AccountsDataReducer = (state = initialState, { type, payload } = {}) => {
