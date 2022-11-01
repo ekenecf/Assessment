@@ -86,7 +86,7 @@ function CreateAccount() {
               Male:
             </label>
             <label htmlFor="female">
-              <input type="radio" id="female" name="gender" value="F" onChange={(e) => updateGender(e)} />
+              <input type="radio" id="female" name="gender" value="F" onChange={(e) => updateGender(e)} required />
               Female:
             </label>
           </div>
