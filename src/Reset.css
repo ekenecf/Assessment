@@ -88,7 +88,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  /* vertical-align: baseline; */
 }
 
 ::-webkit-input-placeholder {
@@ -123,5 +122,4 @@ input:focus {
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  /* background-color: #f8f8f8; */
 }
